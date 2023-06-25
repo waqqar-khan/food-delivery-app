@@ -1,0 +1,26 @@
+.header-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  position: sticky;
+  background-color: aqua;
+  .header-logo {
+    top: 12px;
+    img{
+        width: 16%;
+        margin-top: 5px;
+    }
+  }
+  .header-ryt-side-items {
+    ul {
+        display: flex;
+        list-style: none;
+      li {
+        font-size: 1.4rem;
+        padding: 0 .25rem;
+        color: #c55205;
+      }
+    }
+  }
+}
