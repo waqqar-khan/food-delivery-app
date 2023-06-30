@@ -1,0 +1,38 @@
+.footer-wrapper {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: aqua;
+    .footer-logo {
+      top: 12px;
+      img{
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          margin: 5px 0 0 5px;
+      }
+
+      span{
+        color: #ffffff;
+      }
+    }
+    .footer-ryt-side-items {
+      ul {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: flex-start;
+          list-style: none;
+          padding: 15px;
+        li {
+          font-size: 1.4rem;
+          padding: 0 .25rem;
+          color: #17701e;
+        }
+      }
+    }
+  }
+  

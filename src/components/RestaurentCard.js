@@ -4,7 +4,7 @@ const RestaurentCard = () => {
     return(
         <>
         <div>
-            This is from Restaurent Card
+            res
         </div>
         </>
     )
