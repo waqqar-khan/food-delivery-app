@@ -1,0 +1,22 @@
+.body {
+    position: relative;
+  .body-top-container {
+    display: flex;
+    justify-content: space-around;
+
+    .filter-res {
+      .filter-res-btn {
+        border-radius: 5px;
+        border-color: rgb(14, 205, 61);
+        background-color: rgb(14, 205, 61);
+        color: #ffffff;
+        padding: 5px 8px;
+        cursor: pointer;
+      }
+    }
+  }
+  .res-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
