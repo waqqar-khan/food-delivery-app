@@ -1,5 +1,5 @@
 .res-card {
-  width: 240px;
+  width: 200px;
   border-radius: 10px;
   background-color: #f55f1f;
   padding: 5px;
@@ -7,7 +7,10 @@
   margin: 10px;
   color: #ffffff;
   font-size:large;
-  .res-logo {
-    width: 230px;
+  .res-pic {
+    width: 190px;
+    display: flex;
+    object-fit: cover;
+    justify-content: center;
   }
 }

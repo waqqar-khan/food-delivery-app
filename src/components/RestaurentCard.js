@@ -3,7 +3,6 @@ import { CDN_URL } from "../utils/constants";
 import "../styles/RestaurentCard.scss";
 
 const RestaurentCard = ({resData}) => {
-  console.log("resCard", resData);
   const {
     cloudinaryImageId,
     name,
@@ -17,8 +16,8 @@ const RestaurentCard = ({resData}) => {
     <>
       <div className="res-card">
         <img
-          className="res-logo"
-          alt="res-logo"
+          className="res-pic"
+          alt="res-pic"
           src={CDN_URL + cloudinaryImageId}
         />
         <h3>{name}</h3>

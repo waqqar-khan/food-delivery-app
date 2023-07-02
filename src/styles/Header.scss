@@ -5,6 +5,7 @@
   padding: 0 1rem;
   position: sticky;
   background-color: aqua;
+  // box-sizing: border-box;
   .header-logo {
     top: 12px;
     img{
@@ -20,6 +21,16 @@
         font-size: 1.4rem;
         padding: 0 .25rem;
         color: #c55205;
+      }
+
+      .login-logout-btn{
+        padding: 5px 10px;
+        cursor: pointer;
+        background-color: #c55205;
+        color: #ffffff;
+        border-radius: 5px;
+        border: 1px solid #c55205;
+        margin: 0 10px;
       }
     }
   }

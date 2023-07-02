@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import RestaurentCard from "./RestaurentCard";
-import Search from "./Search";
 // import resList from "../utils/mockData";
 import "../styles/Body.scss";
+import Shimmer from "./Shimmer";
 
 const Body = () => {
   const [listOfRestaurents, setListOfRestaurents] = useState([]);
+  const [filteredRestaurent, setFilteredRestaurent] = useState([]);
+  const [searchText, setSearchText] = useState("");
 
   useEffect(() => {
     fetchData();
@@ -17,15 +19,44 @@ const Body = () => {
     );
     const json = await data.json();
 
-    setListOfRestaurents(json?.data?.cards[2]?.data?.data?.cards)
+    setListOfRestaurents(json?.data?.cards[2]?.data?.data?.cards);
+    setFilteredRestaurent(json?.data?.cards[2]?.data?.data?.cards);
   };
 
-  return (
+  return listOfRestaurents.length === 0 ? (
+    <Shimmer />
+  ) : (
     <>
       <div className="body">
         <div className="body-top-container">
           <div className="search">
-            <Search />
+            <input
+              className="input-search-box"
+              type="text"
+              value={searchText}
+              onChange={(e) => {
+                setSearchText(e.target.value);
+              }}
+            />
+            <button
+              className="search-btn"
+              onClick={() => {
+                const filteredRes = listOfRestaurents.filter((res) =>
+                  res.data.name.toLowerCase().includes(searchText.toLowerCase())
+                );
+                setFilteredRestaurent(filteredRes);
+              }}
+            >
+              Search!
+            </button>
+          </div>
+          <div className="filter-res">
+            <button
+              className="filter-res-btn total-res"
+              onClick={() => {}}
+            >
+              Total Restaurents
+            </button>
           </div>
           <div className="filter-res">
             <button
@@ -35,7 +66,6 @@ const Body = () => {
                   return res.data.avgRating > 4;
                 });
                 setListOfRestaurents(filteredList);
-                console.log("filtered list: ", listOfRestaurents);
               }}
             >
               Top Rated Restaurents
@@ -43,7 +73,7 @@ const Body = () => {
           </div>
         </div>
         <div className="res-container">
-          {listOfRestaurents.map((restaurent) => {
+          {filteredRestaurent.map((restaurent) => {
             return (
               <RestaurentCard key={restaurent.data.id} resData={restaurent} />
             );
