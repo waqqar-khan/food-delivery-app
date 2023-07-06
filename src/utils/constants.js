@@ -3,3 +3,6 @@ export const CDN_URL =
 
 export const LOGO_URL =
   "https://images.freecreatives.com/wp-content/uploads/2016/03/Restaurant-logos.jpg";
+
+export const MENU_URL =
+  "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9715987&lng=77.5945627&restaurantId=";
