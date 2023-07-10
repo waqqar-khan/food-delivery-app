@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import RestaurentCard from "./RestaurentCard";
-// import resList from "../utils/mockData";
-import "../styles/Body.scss";
 import Shimmer from "./Shimmer";
 import useOnlineStatus from "../utils/useOnlineStatus";
 
@@ -27,13 +25,11 @@ const Body = () => {
 
   const onlineStatus = useOnlineStatus();
 
-  if (onlineStatus === false){
+  if (onlineStatus === false) {
     return (
-      <h1>
-        Looks like you're Offline! Please check your internet connection.
-      </h1>
+      <h1>Looks like you're Offline! Please check your internet connection.</h1>
     );
-    }
+  }
   return listOfRestaurents.length === 0 ? (
     <Shimmer />
   ) : (
