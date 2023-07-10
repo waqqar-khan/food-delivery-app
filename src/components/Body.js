@@ -4,6 +4,7 @@ import RestaurentCard from "./RestaurentCard";
 // import resList from "../utils/mockData";
 import "../styles/Body.scss";
 import Shimmer from "./Shimmer";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
   const [listOfRestaurents, setListOfRestaurents] = useState([]);
@@ -24,6 +25,15 @@ const Body = () => {
     setFilteredRestaurent(json?.data?.cards[2]?.data?.data?.cards);
   };
 
+  const onlineStatus = useOnlineStatus();
+
+  if (onlineStatus === false){
+    return (
+      <h1>
+        Looks like you're Offline! Please check your internet connection.
+      </h1>
+    );
+    }
   return listOfRestaurents.length === 0 ? (
     <Shimmer />
   ) : (
@@ -52,10 +62,7 @@ const Body = () => {
             </button>
           </div>
           <div className="filter-res">
-            <button
-              className="filter-res-btn total-res"
-              onClick={() => {}}
-            >
+            <button className="filter-res-btn total-res" onClick={() => {}}>
               Total Restaurents
             </button>
           </div>
@@ -76,7 +83,12 @@ const Body = () => {
         <div className="res-container">
           {filteredRestaurent.map((restaurent) => {
             return (
-              <Link to={"/restaurent/" + restaurent.data.id} key={restaurent.data.id}><RestaurentCard resData={restaurent} /></Link>
+              <Link
+                to={"/restaurent/" + restaurent.data.id}
+                key={restaurent.data.id}
+              >
+                <RestaurentCard resData={restaurent} />
+              </Link>
             );
           })}
         </div>

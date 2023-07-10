@@ -1,18 +1,22 @@
 .body {
   position: relative;
+  background-color: #00008b;
+
   .body-top-container {
     display: flex;
     justify-content: space-around;
-
+    padding: 30px 0 10px 0;
     .search {
+      
       .input-search-box {
         margin: 0 5px 0 10px;
         padding: 5px;
+        background-color:lightcyan;
       }
       .search-btn {
         border-radius: 5px;
-        border-color: navy;
-        background-color: navy;
+        border-color: lightseagreen;
+        background-color: lightseagreen;
         color: #ffffff;
         padding: 5px 8px;
         cursor: pointer;
@@ -29,9 +33,9 @@
         cursor: pointer;
       }
 
-      .total-res{
-        border-color: rgba(64, 12, 178, 0.968);
-        background-color: rgb(20, 20, 232);
+      .total-res {
+        border-color: dodgerblue;
+        background-color: dodgerblue;
         color: #ffffff;
       }
     }

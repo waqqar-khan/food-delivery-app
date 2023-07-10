@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import "../styles/Header.scss";
 import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Header = () => {
   const [btnLoginLogout, setBtnLoginLogout] = useState("Login");
+
+  const onlineStatus = useOnlineStatus();
 
   return (
     <>
@@ -14,6 +17,9 @@ const Header = () => {
         </div>
         <div className="header-ryt-side-items">
           <ul>
+          <li>
+              Online: {onlineStatus ? ":green_circle" : ":red_circle"}
+            </li>
             <li>
               <Link className="link" to="/">HOME</Link>
             </li>
@@ -22,6 +28,9 @@ const Header = () => {
             </li>
             <li>
               <Link className="link" to="/contact">CONTACT US</Link>
+            </li>
+            <li>
+              <Link className="link" to="/grocery">Grocery</Link>
             </li>
             <li>CART</li>
             <button
